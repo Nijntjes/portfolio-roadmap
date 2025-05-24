@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Roadmap – Mario Kart Stijl</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', sans-serif;
+      background: url('https://i.imgur.com/8yQ6qU9.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .roadmap {
+      position: relative;
+      width: 100%;
+      height: 3000px;
+      background: transparent;
+    }
+
+    .checkpoint {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 3px dashed #fff;
+      border-radius: 50%;
+      text-align: center;
+      padding-top: 80px;
+      background: rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .checkpoint:hover {
+      transform: scale(1.1);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .popup {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      display: none;
+      z-index: 999;
+      width: 80%;
+      max-width: 500px;
+    }
+
+    .popup h2 {
+      font-size: 1.2rem;
+    }
+
+    .close-btn {
+      margin-top: 1rem;
+      background: red;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    /* Posities op de “baan” */
+    #start     { top: 200px; left: 10%; }
+    #lap1      { top: 600px; left: 30%; }
+    #boost     { top: 1100px; left: 50%; }
+    #lap2      { top: 1600px; left: 70%; }
+    #finish    { top: 2200px; left: 40%; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="roadmap">
+  <div class="checkpoint" id="start" onclick="openPopup('Start – Over Mij', 'Ik ben een creatieve developer met een passie voor gamification en design.')">Start 🚗</div>
+  <div class="checkpoint" id="lap1" onclick="openPopup('Lap 1 – Eerste Project', 'Mijn eerste website was een responsive portfolio gebouwd met HTML & CSS.')">Lap 1 🍄</div>
+  <div class="checkpoint" id="boost" onclick="openPopup('Boost Pad – Vaardigheden', 'Ik beheers JavaScript, React, Figma en Git.')">Boost ✨</div>
+  <div class="checkpoint" id="lap2" onclick="openPopup('Lap 2 – Favoriete Project', 'Een multiplayer game in Phaser.js die teamwork en snelheid combineert.')">Lap 2 ⭐</div>
+  <div class="checkpoint" id="finish" onclick="openPopup('Finish – Toekomst', 'Ik wil me specialiseren in game development en interactieve webervaringen.')">Finish 🏁</div>
+</div>
+
+<div class="popup" id="popup">
+  <h2 id="popup-title"></h2>
+  <p id="popup-content"></p>
+  <button class="close-btn" onclick="closePopup()">Sluiten</button>
+</div>
+
+<script>
+  function openPopup(title, content) {
+    document.getElementById('popup-title').innerText = title;
+    document.getElementById('popup-content').innerText = content;
+    document.getElementById('popup').style.display = 'block';
+  }
+
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
